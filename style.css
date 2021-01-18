@@ -1,15 +1,53 @@
-#container {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transform: ;
-    perspective: 100px;
+@font-face {
+    font-family: StarWars;
+    src: url(fonts/Starjedi.ttf);
 }
 
-p {
-    width: 700px;
+body {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    font-family: StarWars;
+    font-size: 0.7em;
+    color: #EBD71C;
     text-align: justify;
-    transform: rotateX(50deg);
+}
+
+#container {
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    left: 0;
+    width: 98%;
+    height: 50em;
+    font-size: 80px;
+    font-weight: bold;
+    text-align: justify;
+    transform-origin: 50% 100%;
+    transform: perspective(350px);
+    animation-name: scrolll;
+    animation-duration: 10s;
+    -moz-animation-name: scrolll;
+    -moz-animation-duration: 10s;
+}
+
+.box {
+    transform: rotateX(25deg);
+}
+
+@keyframes scrolll {
+    0% {
+        bottom: 0;
+        transform: translateY(20px) rotateX(25deg);
+    }
+    100% {
+        bottom: 170%;
+        transform: translateY(200px) rotateX(45deg);
+    }
 }
